@@ -10,7 +10,6 @@ Read more about the [User Plugin](https://octobercms.com/plugin/rainlab-user)
 
 This plugin extends the profile database with customfields named "headline, about_me". Data is stored in the  "fes_profile_profiles" table, when you make changes to the create_profiles_table.php script run:
 
-
 ```
 ~ php artisan plugin:refresh Fes.Profile
 ```
