@@ -12,6 +12,9 @@ class CreateProfilesTable extends Migration
         {
             $table->engine = 'InnoDB';
             $table->increments('id');
+            $table->integer('user_id')->unsigned()->index();
+            $table->string('headline')->nullable();
+            $table->text('about_me')->nullable();
             $table->timestamps();
         });
     }
