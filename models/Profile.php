@@ -26,14 +26,25 @@ class Profile extends Model
     /**
      * @var array Relations
      */
-    public $hasOne = [];
-    public $hasMany = [];
-    public $belongsTo = [];
-    public $belongsToMany = [];
-    public $morphTo = [];
-    public $morphOne = [];
-    public $morphMany = [];
-    public $attachOne = [];
-    public $attachMany = [];
+    public $belongsTo = [
+        'user' => ['RainLab\User\Models\User']
+    ];
+
+    public static function getFromUser($user)
+    {
+
+        if ($user->profile) {
+            return $user->profile;
+        }
+
+        $profile = new static;
+        $profile->user = $user;
+        $profile->save();
+
+        $user->profile = $profile;
+
+        return $profile;
+
+    }
 
 }
