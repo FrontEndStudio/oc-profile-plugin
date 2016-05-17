@@ -2,3 +2,6 @@
 1.0.2:
     - Created profiles table
     - create_profiles_table.php
+1.0.3:
+    - Database maintenance. Updated all timestamp columns to be nullable.
+    - update_timestamp_nullable.php    
